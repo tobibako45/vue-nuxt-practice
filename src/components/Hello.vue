@@ -1,14 +1,14 @@
 <template>
   <div class="hello">
     <h1>{{ title }}</h1>
-    <p>aaaaaaaaaaa{{ message }}</p>
+    <p>{{ message }}</p>
   </div>
 </template>
 
 <script>
 export default {
   // コンポーネント名を用意
-  name: "HelloWorld",
+  name: "Hello",
   // propsで、HelloWorldのタグを用意するとき、titleとmessageというタグを用意できるようになる。
   // export defaultの内容は、こんな具合にコンポーネントの設定情報オブジェクトとほぼ同じ。
   // ただ、「name」というもので、コンポーネント名を用意してある点が違う。
@@ -20,6 +20,13 @@ export default {
   }
 };
 </script>
+
+
+
+
+
+
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
@@ -43,4 +50,19 @@ p {
   color: #666;
   font-size: 16pt;
 }
+
+/* h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+} */
 </style>
