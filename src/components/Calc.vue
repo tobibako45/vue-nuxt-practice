@@ -5,11 +5,11 @@
     <hr />
     <div>
       <div>
-        <!-- v-model="fomula"として、foumlaという変数にに値が同期される -->
+        <!-- v-model="fomula"として、foumlaという変数に値が同期される。初期値で0が表示される -->
         <textarea v-model="fomula" cols="40" rows="5"></textarea>
       </div>
       <div>
-        <!-- ボタンでは、v-on:click="doAction"として、クリックしたらdoActionが実行される -->
+        <!-- ボタンでは、v-on:click="doAction"として、クリックしたらdoActionが実行される。v-onはイベントリスナー -->
         <button v-on:click="doAction">CALC</button>
       </div>
     </div>
