@@ -18,6 +18,7 @@ export default {
       // num: "abc"
       num: 12
     };
-  }
+  },
+  computed: {}
 };
 </script>
