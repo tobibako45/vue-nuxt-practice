@@ -1,8 +1,35 @@
+<template>
+  <div class="hello">
+    <h1>{{ title }}</h1>
+    <hr />
+
+    <!-- <ul>
+      <li>
+        <slot name="a" />
+      </li>
+      <li>
+        <slot name="b" />
+      </li>
+      <li>
+        <slot name="c" />
+      </li>
+    </ul>
+
+    <hr />
+    <slot />-->
+
+    <ol>
+      <slot />
+    </ol>
+  </div>
+</template>
+
 <script>
 export default {
+  // コンポーネント名を用意
   name: "HelloWorld",
-  render: function(h) {
-    return h("div", {}, [h("h1", "Render"), h("p", "this is render sample.")]);
+  props: {
+    title: String
   }
 };
 </script>
