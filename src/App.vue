@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <HelloWorld />
+    <HelloWorld title="JSX?"></HelloWorld>
   </div>
 </template>
+
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";

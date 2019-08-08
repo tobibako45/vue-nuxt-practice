@@ -1,11 +1,31 @@
 <script>
+// export default {
+//   name: "HelloWorld",
+//   render: function(h) {
+//     return h("div", {}, [h("h1", "Render"), h("p", "this is render sample.")]);
+//   }
+// };
+
 export default {
   name: "HelloWorld",
+  data: function() {
+    return {
+      title: "JSX",
+      message: "これは、dataに用意したメッサージ"
+    };
+  },
   render: function(h) {
-    return h("div", {}, [h("h1", "Render"), h("p", "this is render sample.")]);
+    return (
+      <div>
+        <h1>{this.title}</h1>
+        <p>{this.message}</p>
+      </div>
+    );
   }
 };
 </script>
+
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
