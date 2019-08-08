@@ -1,26 +1,34 @@
-<script>
-// export default {
-//   name: "HelloWorld",
-//   render: function(h) {
-//     return h("div", {}, [h("h1", "Render"), h("p", "this is render sample.")]);
-//   }
-// };
+<template>
+  <div class="hello">
+    <h1>{{title}}</h1>
+    <p>{{message}}</p>
+    <hr />
+    <button v-on:click="doAction">{{btn}}</button>
 
+    <transition name="transit">
+      <p v-if="flg" class="trans">トランジション！！</p>
+    </transition>
+  </div>
+</template>
+
+
+<script>
 export default {
   name: "HelloWorld",
+  props: {
+    title: String
+  },
   data: function() {
     return {
-      title: "JSX",
-      message: "これは、dataに用意したメッサージ"
+      message: "トランジションさんぷる",
+      flg: true,
+      btn: "Show/Hide"
     };
   },
-  render: function(h) {
-    return (
-      <div>
-        <h1>{this.title}</h1>
-        <p>{this.message}</p>
-      </div>
-    );
+  methods: {
+    doAction: function() {
+      this.flg = !this.flg;
+    }
   }
 };
 </script>
@@ -77,5 +85,11 @@ div.in {
 .inner {
   color: red;
   font-size: 14pt;
+}
+
+.trans {
+  background-color: #ddf;
+  padding: 10px;
+  font-size: 20pt;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HelloWorld title="JSX?"></HelloWorld>
+    <HelloWorld></HelloWorld>
   </div>
 </template>
 
