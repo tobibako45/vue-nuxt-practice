@@ -3,21 +3,14 @@
     <h1>{{title}}</h1>
     <p>{{message}}</p>
     <hr />
-    <button v-on:click="doAction">{{btn}}</button>
-
-    <transition
-      name="transit"
-      @before-enter="startAction"
-      @before-leave="startAction"
-      @after-enter="endAction"
-      @after-leave="endAction"
-    >
-      <!-- v-ifでflgを監視して、表示非表示 -->
-      <p v-if="flg" class="trans">トランジション！！</p>
+    <button v-on:click="doAction">Show/Hide</button>
+    <br />
+    <br />
+    <transition name="transit">
+      <p v-if="flg" class="trans">Transition!</p>
     </transition>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -27,30 +20,14 @@ export default {
   },
   data: function() {
     return {
-      message: "トランジションさんぷる",
+      message: "Transition Sample!",
       flg: true,
-      btn: "Show/Hide"
+      btn: "Hide"
     };
   },
   methods: {
     doAction: function() {
       this.flg = !this.flg;
-    },
-    startAction: function() {
-      if (this.flg) {
-        this.message = "現れる。。。";
-      } else {
-        this.message = "消えます！！";
-      }
-    },
-    endAction: function() {
-      if (this.flg) {
-        this.btn = "Hide";
-        this.message = "現れました！！！";
-      } else {
-        this.btn = "Show";
-        this.message = "きえました。。。";
-      }
     }
   }
 };
@@ -61,23 +38,24 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .trans {
+  width: 150px;
   background-color: #ddf;
   padding: 10px;
   font-size: 20pt;
 }
 
-/* アクティブ時の設定 */
 .transit-enter-active {
-  transition: opacity 0.5s;
+  transition: 1s;
 }
-
 .transit-leave-active {
-  transition: opacity 5s;
+  transition: 1s;
 }
 
 /* Enterの設定 */
-.transit-enter {
-  opacity: 0;
+.transit-enter,
+.transit-leave-to {
+  transform: translateX(200px) translateY(-200px);
+  opacity: 0.1;
 }
 
 .transit-enter-to {
@@ -87,10 +65,6 @@ export default {
 /* Leaveの設定 */
 .transit-leave {
   opacity: 1;
-}
-
-.transit-leave-to {
-  opacity: 0;
 }
 
 div {
