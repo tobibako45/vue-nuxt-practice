@@ -54,7 +54,15 @@ export default {
 /* Enterの設定 */
 .transit-enter,
 .transit-leave-to {
-  transform: translateX(200px) translateY(-200px);
+  /* 並行移動 */
+  /* transform: translateX(200px) translateY(-200px); */
+
+  /* 拡大縮小 */
+  /* transform: scale(5); */
+
+  /* 回転 */
+  transform: rotateZ(360deg);
+
   opacity: 0.1;
 }
 
